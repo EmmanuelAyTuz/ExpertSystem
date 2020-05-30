@@ -4,3 +4,4 @@
 
 subject("ACA0907", "TALLER DE ÉTICA", 1, 1, 3).
 subject("ACA0909", "TALLER DE INV. I", 4, 1, 4).
+subject("ACA0910", "T. DE INVEST. II", 7, 1, 5).
