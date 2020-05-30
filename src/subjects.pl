@@ -8,10 +8,10 @@ subject('ACA0909', 'TALLER DE INV. I', 4, 1, 4).
 subject('ACA0910', 'T. DE INVEST. II', 7, 1, 5).
 subject('ACC0906', 'FUNDAMENTOS DE INV', 1, 1, 4).
 subject('ACD0908', 'DES. SUSTENTABLE', 3, 1, 4).
-subject('ACA0901', 'CÁLCULO DIFERENCIAL', 7, 1, 3).
-subject('ACA0901', 'CÁLCULO DIFERENCIAL', 7, 1, 3).
-subject('ACA0901', 'CÁLCULO DIFERENCIAL', 7, 1, 3).
-subject('ACA0901', 'CÁLCULO DIFERENCIAL', 7, 1, 3).
+subject('ACA0901', 'CALCULO DIFERENCIAL', 1, 1, 5).
+subject('ACF0902', 'CALCULO INTEGRAL', 2, 1, 4).
+subject('ACF0903', 'CÁLCULO DIFERENCIAL', 7, 1, 4).
+subject('ACA0901', 'CÁLCULO DIFERENCIAL', 7, 1, 5).
 
 
 
