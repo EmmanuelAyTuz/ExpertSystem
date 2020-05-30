@@ -32,6 +32,4 @@ subject('SCD1027', 'TOP. AV. DE PROG.', 4, 1, 3).
 subject('SCC1007', 'FUND. ING. SOFTWARE', 5, 1, 3).
 subject('SCD1004', 'CMT. Y ENR. EN REDES', 6, 1, 3).
 subject('SSO2010', 'SERV. SOCIAL', 7, 1, 5).
-
-
-
+subject('SSO2010', 'SERV. SOCIAL', 7, 2, 5).
