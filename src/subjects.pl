@@ -31,6 +31,8 @@ subject('SCD1022', 'SIMULACION', 5, 1, 3).
 subject('SCD1027', 'TOP. AV. DE PROG.', 4, 1, 3).
 subject('SCC1007', 'FUND. ING. SOFTWARE', 5, 1, 3).
 subject('SCD1004', 'CMT. Y ENR. EN REDES', 6, 1, 3).
+subject('SCC1017', 'METODOS NUMÉRICOS', 5, 1, 3).
+subject('SCD1003', 'ARQ. DE COMPUTADORAS', 6, 1, 3).
 subject('SSO2010', 'SERV. SOCIAL', 7, 1, 5).
 
 
