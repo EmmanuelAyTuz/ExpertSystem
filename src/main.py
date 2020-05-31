@@ -57,7 +57,7 @@ def default():
     return "Opcion Invalida"
 
 
-def materias(case):
+def switch(case):
     sw = {
         1: TOTAL(),
         2: SEMESTRE(),
@@ -77,7 +77,7 @@ def menustudent():
     alumnos(case)
 
 
-def menuinicio():
+def menu():
     print("----------- MENU INICIAL -----------")
     print("1. TOTAL DE MATERIAS")
     print("2. FILTRAR SEMESTRE")
@@ -85,8 +85,8 @@ def menuinicio():
     print("4. FILTRAR CREDITOS")
     print("5. ALUMNOS")
     print("-----------------------------------")
-    case = int(input("Seleccione una opcion: "))
-    materias(case)
 
 
-menuinicio()
+menu()
+case = int(input("Seleccione una opcion: "))
+print(switch(case))
