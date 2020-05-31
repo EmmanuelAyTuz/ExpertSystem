@@ -1,9 +1,9 @@
 from pyswip import Prolog
 prolog = Prolog()
 
-prolog.consult("src/calculations.pl")
-status = input("Estado{Aprobado=1, NoAprobado=0}: ")
-welcome = prolog.query("count_status(" + status + ", LENGH)")
+prolog.consult("test/example.pl")
+#status = input("Estado{Aprobado=1, NoAprobado=0}: ")
+welcome = prolog.query("career_maxminsum_credits(MAX,MIN,SUM,2)")
 print(list(welcome))
 
 

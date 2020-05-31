@@ -124,6 +124,7 @@ def menustudent():
     case = int(input("Seleccione una opcion: "))
     alumnos(case)
 
+
 while True:
     # Mostramos el menu
     menustart()
@@ -146,4 +147,4 @@ while True:
     elif(case == 6):
         break
     else:
-		    input("No has pulsado ninguna opción correcta...\npulsa una tecla para continuar")
+        input("No has pulsado ninguna opción correcta...\npulsa una tecla para continuar")

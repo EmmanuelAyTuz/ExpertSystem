@@ -20,4 +20,10 @@ semester_enrollment(LB, N):- %Alumnos con respecto al semestre, retorna matricul
 
 semester_student_name(LB, N):- %Alumnos con respecto al semestre, retorna nombre
     findall(M,student(_,M,N,_,_),LA),
-    atomics_to_string(LA, ', ', LB). 
+    atomics_to_string(LA, ', ', LB).
+
+career_maxminsum_credits(MAX, MIN, SUM, CAREER):- %Maximo, minimo & suma de todos los creditos de las materias por carrera
+    findall(D, subject(_,_,_,CAREER,D), LIST),
+    max_member(MAX, LIST),
+    min_member(MIN, LIST),
+    sum_list(LIST, SUM).
