@@ -92,6 +92,8 @@ def menustart():
     print("4. FILTRAR CREDITOS")
     print("5. ALUMNOS")
     print("-----------------------------------")
+    case = int(input("Seleccione una opcion: "))
+    materias(case)
 
 
 menustart()
