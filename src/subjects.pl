@@ -4,6 +4,7 @@
 %Clave[alfanumerico{XXXXXXX}], Nombre[texto], Semestre[numerico{1~9}], Carrera[numerico{1~5}], Creditos[numerico{X}]
 
 subject('ACA0907', 'TALLER DE ETICA', 1, 1, 3).
+subject('ACA0908', 'TALLER DE ETICA', 1, 2, 4).
 subject('ACA0909', 'TALLER DE INV. I', 4, 1, 4).
 subject('ACA0910', 'T. DE INVEST. II', 7, 1, 5).
 subject('ACC0906', 'FUNDAMENTOS DE INV', 1, 1, 4).
@@ -35,4 +36,5 @@ subject('SCC1017', 'METODOS NUMERICOS', 5, 1, 4).
 subject('SCD1003', 'ARQ. DE COMPUTADORAS', 6, 1, 5).
 subject('SCB1001', 'ADMON. DE B. DE DAT', 6, 1, 4).
 subject('SSO2010', 'SERV. SOCIAL', 7, 1, 5).
-subject('SSO2010', 'SERV. SOCIAL', 7, 2, 5).
+subject('SSO2011', 'SERV. SOCIAL', 7, 2, 5).
+subject('SSO2012', 'SERV. SOCIAL', 7, 3, 5).

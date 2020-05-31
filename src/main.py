@@ -3,6 +3,7 @@ import re
 from pyswip import Prolog
 prolog = Prolog()
 
+
 def welcome():  # Mensaje de bienvenida
     prolog.consult("src/welcome.pl")
     welcome = list(prolog.query("header()."))
@@ -112,6 +113,7 @@ def menustart():
     print("6. SALIR")
     print("-----------------------------------")
 
+
 def menustudent():
     print("----------- MENU ALUMNOS -----------")
     print("1. TOTAL DE APROBADOS")
@@ -121,6 +123,7 @@ def menustudent():
     print("-----------------------------------")
     case = int(input("Seleccione una opcion: "))
     alumnos(case)
+
 
 while True:
     try:
@@ -145,8 +148,7 @@ while True:
         elif(case == 6):
             break
         else:
-                input("No has pulsado ninguna opción correcta...\npulsa una tecla para continuar")
-    except ValueError:#En caso de error
-        input ("INGRESAR SOLO VALOR NUMERICO")
-    except: #En caso de error:
-        input ("ERROR INTENTE DE NUEVO")
+            input(
+                "No has pulsado ninguna opción correcta...\npulsa una tecla para continuar")
+    except:  # En caso de error:
+        input("ERROR INTENTE DE NUEVO")
