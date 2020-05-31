@@ -1,7 +1,7 @@
 %:- style_check(-singleton).
 %Materias de la carrera
-
-%Clave,Nombre,Semestre[1-9]Carrera['Sistemas'=>1],creditos
+%Carrera{1:Sistemas, 2:Admon, 3:Ambiental, 4:Industrial, 5:Civil}
+%Clave[alfanumerico{XXXXXXX}], Nombre[texto], Semestre[numerico{1~9}], Carrera[numerico{1~5}], Creditos[numerico{X}]
 
 subject('ACA0907', 'TALLER DE ETICA', 1, 1, 3).
 subject('ACA0909', 'TALLER DE INV. I', 4, 1, 4).
