@@ -58,10 +58,19 @@ def CREDITS():  # Filtro por creditos en las materias
               sb["C"], " Carrera: ", sb["D"])
 
 
+def MAXMINSUMCREDITS():
+    prolog.consult("src/rules.pl")
+    icareer = input(
+        "Indique(1 Sistemas, 2 Admon, 3 Ambiental, 4 Industrial, 5 Civil): ")
+    mmsc = prolog.query(
+        "career_maxminsum_credits(MAX,MIN,SUM," + icareer + ")")
+    print(list(mmsc))
+
+
 def STATUS(status):  # Filtra por estado de los alumnos
     prolog.consult("src/rules.pl")
-    welcome = prolog.query("count_status(" + status + ", LENGH)")
-    print(list(welcome))
+    st = prolog.query("count_status(" + status + ", LENGH)")
+    print(list(st))
 
 
 def STUDENTSBYCAREER():  # Consulta los alumnos por carrera imprime su matricula & nombre
@@ -106,6 +115,8 @@ def actionsubjects(case):
         CAREER()
     if(case == 4):
         CREDITS()
+    if(case == 5):
+        MAXMINSUMCREDITS()
 
 
 def default():
@@ -128,6 +139,7 @@ def menusubject():
     print("2. FILTRAR SEMESTRE")
     print("3. FILTRAR CARRERA")
     print("4. FILTRAR CREDITOS")
+    print("5. OBTENER MAX, MIN & TOTAL DE CREDITOS POR CARRERA")
     print("-----------------------------------")
     case = int(input("Seleccione una opcion: "))
     actionsubjects(case)
@@ -158,7 +170,8 @@ while True:
         elif(case == 3):
             break
         else:
-            input("No has pulsado ninguna opción correcta...\npulsa una tecla para continuar")
+            input(
+                "No has pulsado ninguna opción correcta...\npulsa una tecla para continuar")
     except ValueError:
         input("DEBE INGRESAR NUMEROS")
     except:  # En caso de error:
