@@ -1,14 +1,28 @@
+import os
+import re
 from pyswip import Prolog
 prolog = Prolog()
-import os
 
-def welcome():
+
+def welcome():  # Mensaje de bienvenida
     prolog.consult("src/welcome.pl")
     welcome = list(prolog.query("header()."))
     print(welcome)
 
 
-def ALL():
+def listOfTuples(listA, listB):  # Combinar dos listas y retorna una nueva
+    return list(map(lambda x, y: (x, y), listA, listB))
+
+
+def fixOutput(query):  # Extrae los valores entre "'", separa por ",", retorna list
+    prolog.consult("src/rules.pl")
+    ntext = re.findall(
+        r"'(.*?)'", str(list(prolog.query(query))))
+    # print(ntext)
+    return ntext[1].split(', ')
+
+
+def ALL():  # Todas las materias
     prolog.consult("src/subjects.pl")
     print("#### MATERIAS ####")
     for sb in prolog.query("subject(A, B, C, D, E)."):
@@ -17,7 +31,7 @@ def ALL():
     return 0
 
 
-def SEMESTER():
+def SEMESTER():  # Filtro por semestre en las materias
     prolog.consult("src/subjects.pl")
     print("#### FILTRAR POR SEMESTRE ####")
     sm = input("Numero de semestre: ")
@@ -26,7 +40,7 @@ def SEMESTER():
               " Carrera: ", sb["D"], " Creditos: ", sb["E"])
 
 
-def CAREER():
+def CAREER():  # Filtro por carrera en las materias
     prolog.consult("src/subjects.pl")
     print("#### FILTRAR POR CARRERA ####")
     crr = input("Numero de carrera: ")
@@ -35,7 +49,7 @@ def CAREER():
               sb["C"], " Creditos: ", sb["E"])
 
 
-def CREDITS():
+def CREDITS():  # Filtro por creditos en las materias
     prolog.consult("src/subjects.pl")
     print("#### FILTRAR POR CREDITOS ####")
     cr = input("Cantidad de creditos: ")
@@ -44,10 +58,32 @@ def CREDITS():
               sb["C"], " Carrera: ", sb["D"])
 
 
-def STATUS(status):
-    prolog.consult("src/calculations.pl")
+def STATUS(status):  # Filtra por estado de los alumnos
+    prolog.consult("src/rules.pl")
     welcome = prolog.query("count_status(" + status + ", LENGH)")
     print(list(welcome))
+
+
+def ALUMNOSENCARRERA():  # Consulta los alumnos por carrera imprime su matricula & nombre
+    print("Indique(1 Sistemas, 2 Admon, 3 Ambiental, 4 Industrial, 5 Civil)")
+    icareer = str(input("Carrera: "))
+    print("Alumnos en la carrera:")
+    query1 = "career_student_name(OUT," + icareer + ")"
+    query2 = "career_enrollment(OUT," + icareer + ")"
+    for x in listOfTuples(fixOutput(query1), fixOutput(query2)):
+        print(x)
+        print("\r")
+
+
+def ALUMNOSENSEMESTRE():  # Consulta los alumnos por semestre imprime su matricula & nombre
+    print("Indique(1, 2, 3, 4, 5, 6, 7, 8, 9")
+    isem = str(input("Semestre: "))
+    print("Alumnos en el semestre:")
+    query1 = "semester_student_name(OUT," + isem + ")"
+    query2 = "semester_enrollment(OUT," + isem + ")"
+    for x in listOfTuples(fixOutput(query1), fixOutput(query2)):
+        print(x)
+        print("\r")
 
 
 def alumnos(case):
@@ -55,14 +91,19 @@ def alumnos(case):
         STATUS("1")
     if(case == 2):
         STATUS("0")
+    if(case == 3):
+        ALUMNOSENSEMESTRE()
+    if(case == 4):
+        ALUMNOSENCARRERA()
 
 
 def default():
     return "Opcion Invalida"
 
+
 def menustart():
     welcome()
-    os.system('cls') # NOTA para windows tienes que cambiar clear por cls
+    os.system('cls')  # NOTA para windows tienes que cambiar clear por cls
     print("----------- MENU INICIAL -----------")
     print("1. TOTAL DE MATERIAS")
     print("2. FILTRAR SEMESTRE")
@@ -70,6 +111,17 @@ def menustart():
     print("4. FILTRAR CREDITOS")
     print("5. ALUMNOS")
     print("-----------------------------------")
+
+
+def menustudent():
+    print("----------- MENU ALUMNOS -----------")
+    print("1. TOTAL DE APROBADOS")
+    print("2. TOTAL DE REPROBADOS")
+    print("3. FILTRAR ALUMNOS POR SEMESTRE")
+    print("4. FILTRAR ALUMNOS POR CARRERA")
+    print("-----------------------------------")
+    case = int(input("Seleccione una opcion: "))
+    alumnos(case)
 
 
 while True:
@@ -91,12 +143,3 @@ while True:
     elif(case == 5):
         menustudent()
         input("Has pulsado la opción ...\npulsa una tecla para continuar")
-
-
-def menustudent():
-    print("----------- MENU ALUMNOS -----------")
-    print("1. TOTAL DE APROBADOS")
-    print("2. TOTAL DE REPROBADOS")
-    print("-----------------------------------")
-    case = int(input("Seleccione una opcion: "))
-    alumnos(case)
