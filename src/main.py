@@ -147,4 +147,4 @@ while True:
         else:
                 input("No has pulsado ninguna opción correcta...\npulsa una tecla para continuar")
     except: #En caso de error:
-        input ("Error")
+        input ("ERROR INTENTE DE NUEVO")
