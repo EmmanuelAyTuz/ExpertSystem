@@ -158,7 +158,8 @@ while True:
         elif(case == 3):
             break
         else:
-            input(
-                "No has pulsado ninguna opción correcta...\npulsa una tecla para continuar")
+            input("No has pulsado ninguna opción correcta...\npulsa una tecla para continuar")
+    except ValueError:
+        input("DEBE INGRESAR NUMEROS")
     except:  # En caso de error:
         input("ERROR INTENTE DE NUEVO")
