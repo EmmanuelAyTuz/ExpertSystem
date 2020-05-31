@@ -146,5 +146,7 @@ while True:
             break
         else:
                 input("No has pulsado ninguna opción correcta...\npulsa una tecla para continuar")
+    except ValueError:#En caso de error
+        input ("INGRESAR SOLO VALOR NUMERICO")
     except: #En caso de error:
         input ("ERROR INTENTE DE NUEVO")
