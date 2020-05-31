@@ -102,8 +102,8 @@ def default():
 
 
 def menustart():
-    welcome()
     os.system('cls')  # NOTA para windows tienes que cambiar clear por cls
+    welcome()
     print("----------- MENU INICIAL -----------")
     print("1. TOTAL DE MATERIAS")
     print("2. FILTRAR SEMESTRE")
