@@ -110,6 +110,7 @@ def menustart():
     print("3. FILTRAR CARRERA")
     print("4. FILTRAR CREDITOS")
     print("5. ALUMNOS")
+    print("6. SALIR")
     print("-----------------------------------")
 
 
@@ -122,7 +123,6 @@ def menustudent():
     print("-----------------------------------")
     case = int(input("Seleccione una opcion: "))
     alumnos(case)
-
 
 while True:
     # Mostramos el menu
@@ -143,3 +143,7 @@ while True:
     elif(case == 5):
         menustudent()
         input("Has pulsado la opción ...\npulsa una tecla para continuar")
+    elif(case == 6):
+        break
+    else:
+		    input("No has pulsado ninguna opción correcta...\npulsa una tecla para continuar")
