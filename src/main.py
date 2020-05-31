@@ -22,7 +22,7 @@ def fixOutput(query):  # Extrae los valores entre "'", separa por ",", retorna l
     return ntext[1].split(', ')
 
 
-def ALL():  # Todas las materias
+def ALLSUBJECT():  # Todas las materias
     prolog.consult("src/subjects.pl")
     print("#### MATERIAS ####")
     for sb in prolog.query("subject(A, B, C, D, E)."):
@@ -64,7 +64,7 @@ def STATUS(status):  # Filtra por estado de los alumnos
     print(list(welcome))
 
 
-def ALUMNOSENCARRERA():  # Consulta los alumnos por carrera imprime su matricula & nombre
+def STUDENTSBYCAREER():  # Consulta los alumnos por carrera imprime su matricula & nombre
     print("Indique(1 Sistemas, 2 Admon, 3 Ambiental, 4 Industrial, 5 Civil)")
     icareer = str(input("Carrera: "))
     print("Alumnos en la carrera:")
@@ -75,7 +75,7 @@ def ALUMNOSENCARRERA():  # Consulta los alumnos por carrera imprime su matricula
         print("\r")
 
 
-def ALUMNOSENSEMESTRE():  # Consulta los alumnos por semestre imprime su matricula & nombre
+def STUDENTSBYSEMESTER():  # Consulta los alumnos por semestre imprime su matricula & nombre
     print("Indique(1, 2, 3, 4, 5, 6, 7, 8, 9")
     isem = str(input("Semestre: "))
     print("Alumnos en el semestre:")
@@ -86,15 +86,26 @@ def ALUMNOSENSEMESTRE():  # Consulta los alumnos por semestre imprime su matricu
         print("\r")
 
 
-def alumnos(case):
+def actionstudents(case):
     if(case == 1):
         STATUS("1")
     if(case == 2):
         STATUS("0")
     if(case == 3):
-        ALUMNOSENSEMESTRE()
+        STUDENTSBYSEMESTER()
     if(case == 4):
-        ALUMNOSENCARRERA()
+        STUDENTSBYCAREER()
+
+
+def actionsubjects(case):
+    if(case == 1):
+        ALLSUBJECT()
+    if(case == 2):
+        SEMESTER()
+    if(case == 3):
+        CAREER()
+    if(case == 4):
+        CREDITS()
 
 
 def default():
@@ -105,13 +116,21 @@ def menustart():
     os.system('cls')  # NOTA para windows tienes que cambiar clear por cls
     welcome()
     print("----------- MENU INICIAL -----------")
+    print("1. MATERIAS")
+    print("2. ALUMNOS")
+    print("3. SALIR")
+    print("-----------------------------------")
+
+
+def menusubject():
+    print("----------- MENU MATERIAS -----------")
     print("1. TOTAL DE MATERIAS")
     print("2. FILTRAR SEMESTRE")
     print("3. FILTRAR CARRERA")
     print("4. FILTRAR CREDITOS")
-    print("5. ALUMNOS")
-    print("6. SALIR")
     print("-----------------------------------")
+    case = int(input("Seleccione una opcion: "))
+    actionsubjects(case)
 
 
 def menustudent():
@@ -122,7 +141,7 @@ def menustudent():
     print("4. FILTRAR ALUMNOS POR CARRERA")
     print("-----------------------------------")
     case = int(input("Seleccione una opcion: "))
-    alumnos(case)
+    actionstudents(case)
 
 
 while True:
@@ -131,21 +150,12 @@ while True:
         menustart()
         case = int(input("Seleccione una opcion: "))
         if(case == 1):
-            ALL()
+            menusubject()
             input("Has pulsado la opción 1...\npulsa una tecla para continuar")
         elif(case == 2):
-            SEMESTER()
-            input("Has pulsado la opción 2...\npulsa una tecla para continuar")
-        elif(case == 3):
-            CAREER()
-            input("Has pulsado la opción 3...\npulsa una tecla para continuar")
-        elif(case == 4):
-            CREDITS()
-            input("Has pulsado la opción 4...\npulsa una tecla para continuar")
-        elif(case == 5):
             menustudent()
             input("Has pulsado la opción ...\npulsa una tecla para continuar")
-        elif(case == 6):
+        elif(case == 3):
             break
         else:
             input(
