@@ -3,7 +3,6 @@ import re
 from pyswip import Prolog
 prolog = Prolog()
 
-
 def welcome():  # Mensaje de bienvenida
     prolog.consult("src/welcome.pl")
     welcome = list(prolog.query("header()."))
@@ -113,7 +112,6 @@ def menustart():
     print("6. SALIR")
     print("-----------------------------------")
 
-
 def menustudent():
     print("----------- MENU ALUMNOS -----------")
     print("1. TOTAL DE APROBADOS")
@@ -125,25 +123,28 @@ def menustudent():
     alumnos(case)
 
 while True:
-    # Mostramos el menu
-    menustart()
-    case = int(input("Seleccione una opcion: "))
-    if(case == 1):
-        ALL()
-        input("Has pulsado la opción 1...\npulsa una tecla para continuar")
-    elif(case == 2):
-        SEMESTER()
-        input("Has pulsado la opción 2...\npulsa una tecla para continuar")
-    elif(case == 3):
-        CAREER()
-        input("Has pulsado la opción 3...\npulsa una tecla para continuar")
-    elif(case == 4):
-        CREDITS()
-        input("Has pulsado la opción 4...\npulsa una tecla para continuar")
-    elif(case == 5):
-        menustudent()
-        input("Has pulsado la opción ...\npulsa una tecla para continuar")
-    elif(case == 6):
-        break
-    else:
-		    input("No has pulsado ninguna opción correcta...\npulsa una tecla para continuar")
+    try:
+        # Mostramos el menu
+        menustart()
+        case = int(input("Seleccione una opcion: "))
+        if(case == 1):
+            ALL()
+            input("Has pulsado la opción 1...\npulsa una tecla para continuar")
+        elif(case == 2):
+            SEMESTER()
+            input("Has pulsado la opción 2...\npulsa una tecla para continuar")
+        elif(case == 3):
+            CAREER()
+            input("Has pulsado la opción 3...\npulsa una tecla para continuar")
+        elif(case == 4):
+            CREDITS()
+            input("Has pulsado la opción 4...\npulsa una tecla para continuar")
+        elif(case == 5):
+            menustudent()
+            input("Has pulsado la opción ...\npulsa una tecla para continuar")
+        elif(case == 6):
+            break
+        else:
+                input("No has pulsado ninguna opción correcta...\npulsa una tecla para continuar")
+    except: #En caso de error:
+        input ("Error")
