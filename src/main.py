@@ -13,7 +13,6 @@ def TOTAL():
     for sb in prolog.query("subject(A, B, C, D, E)."):
         print("Clave: ", sb["A"], " Nombre: ", sb["B"], " Semestre: ",
               sb["C"], " Carrera: ", sb["D"], " Creditos: ", sb["E"])
-    return
 
 
 def SEMESTRE():
@@ -22,7 +21,6 @@ def SEMESTRE():
     for sb in prolog.query("subject(A, B, " + sm + ", D, E)."):
         print("Clave: ", sb["A"], " Nombre: ", sb["B"],
               " Carrera: ", sb["D"], " Creditos: ", sb["E"])
-    return
 
 
 def CARRERA():
@@ -40,14 +38,12 @@ def CREDITOS():
     for sb in prolog.query("subject(A, B, C, D, " + cr + ")."):
         print("Clave: ", sb["A"], " Nombre: ", sb["B"], " Semestre: ",
               sb["C"], " Carrera: ", sb["D"])
-    return
 
 
 def STATUS(status):
     prolog.consult("src/calculations.pl")
     welcome = prolog.query("count_status(" + status + ", LENGH)")
     print(list(welcome))
-    return
 
 
 def alumnos(case):
