@@ -1,6 +1,6 @@
 from pyswip import Prolog
 prolog = Prolog()
-
+import os
 
 def welcome():
     prolog.consult("src/welcome.pl")
@@ -60,18 +60,37 @@ def alumnos(case):
 def default():
     return "Opcion Invalida"
 
+def menustart():
+    welcome()
+    os.system('cls')
+    print("----------- MENU INICIAL -----------")
+    print("1. TOTAL DE MATERIAS")
+    print("2. FILTRAR SEMESTRE")
+    print("3. FILTRAR CARRERA")
+    print("4. FILTRAR CREDITOS")
+    print("5. ALUMNOS")
+    print("-----------------------------------")
 
-def materias(case):
+
+while True:
+    menustart()
+    case = int(input("Seleccione una opcion: "))
     if(case == 1):
         ALL()
-    if(case == 2):
+        input("Has pulsado la opción 1...\npulsa una tecla para continuar")
+    elif(case == 2):
         SEMESTER()
-    if(case == 3):
+        input("Has pulsado la opción 2...\npulsa una tecla para continuar")
+    elif(case == 3):
         CAREER()
-    if(case == 4):
+        input("Has pulsado la opción 3...\npulsa una tecla para continuar")
+    elif(case == 4):
         CREDITS()
-    if(case == 5):
+        input("Has pulsado la opción 4...\npulsa una tecla para continuar")
+    elif(case == 5):
         menustudent()
+        input("Has pulsado la opción ...\npulsa una tecla para continuar")
+    
 
 
 def menustudent():
@@ -81,19 +100,3 @@ def menustudent():
     print("-----------------------------------")
     case = int(input("Seleccione una opcion: "))
     alumnos(case)
-
-
-def menustart():
-    welcome()
-    print("----------- MENU INICIAL -----------")
-    print("1. TOTAL DE MATERIAS")
-    print("2. FILTRAR SEMESTRE")
-    print("3. FILTRAR CARRERA")
-    print("4. FILTRAR CREDITOS")
-    print("5. ALUMNOS")
-    print("-----------------------------------")
-    case = int(input("Seleccione una opcion: "))
-    materias(case)
-
-
-menustart()
