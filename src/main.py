@@ -1,21 +1,24 @@
 from pyswip import Prolog
 prolog = Prolog()
 
-prolog.consult("src/welcome.pl")
-welcome = list(prolog.query("header()."))
-print(welcome)
 
-prolog.consult("src/subjects.pl")
+def welcome():
+    prolog.consult("src/welcome.pl")
+    welcome = list(prolog.query("header()."))
+    print(welcome)
 
 
-def TOTAL():
+def ALL():
+    prolog.consult("src/subjects.pl")
     print("#### MATERIAS ####")
     for sb in prolog.query("subject(A, B, C, D, E)."):
         print("Clave: ", sb["A"], " Nombre: ", sb["B"], " Semestre: ",
               sb["C"], " Carrera: ", sb["D"], " Creditos: ", sb["E"])
+    return 0
 
 
-def SEMESTRE():
+def SEMESTER():
+    prolog.consult("src/subjects.pl")
     print("#### FILTRAR POR SEMESTRE ####")
     sm = input("Numero de semestre: ")
     for sb in prolog.query("subject(A, B, " + sm + ", D, E)."):
@@ -23,16 +26,17 @@ def SEMESTRE():
               " Carrera: ", sb["D"], " Creditos: ", sb["E"])
 
 
-def CARRERA():
+def CAREER():
+    prolog.consult("src/subjects.pl")
     print("#### FILTRAR POR CARRERA ####")
     crr = input("Numero de carrera: ")
     for sb in prolog.query("subject(A, B, C, " + crr + ", E)."):
         print("Clave: ", sb["A"], " Nombre: ", sb["B"], " Semestre: ",
               sb["C"], " Creditos: ", sb["E"])
-    return
 
 
-def CREDITOS():
+def CREDITS():
+    prolog.consult("src/subjects.pl")
     print("#### FILTRAR POR CREDITOS ####")
     cr = input("Cantidad de creditos: ")
     for sb in prolog.query("subject(A, B, C, D, " + cr + ")."):
@@ -47,11 +51,10 @@ def STATUS(status):
 
 
 def alumnos(case):
-    sw = {
-        1: STATUS(1),
-        2: STATUS(0),
-    }
-    return sw.get(case, default())
+    if(case == 1):
+        STATUS("1")
+    if(case == 2):
+        STATUS("0")
 
 
 def default():
@@ -59,14 +62,16 @@ def default():
 
 
 def materias(case):
-    sw = {
-        1: TOTAL(),
-        2: SEMESTRE(),
-        3: CARRERA(),
-        4: CREDITOS(),
-        5: menustudent(),
-    }
-    return sw.get(case, default())
+    if(case == 1):
+        ALL()
+    if(case == 2):
+        SEMESTER()
+    if(case == 3):
+        CAREER()
+    if(case == 4):
+        CREDITS()
+    if(case == 5):
+        menustudent()
 
 
 def menustudent():
@@ -78,7 +83,8 @@ def menustudent():
     alumnos(case)
 
 
-def menuinicio():
+def menustart():
+    welcome()
     print("----------- MENU INICIAL -----------")
     print("1. TOTAL DE MATERIAS")
     print("2. FILTRAR SEMESTRE")
@@ -90,4 +96,4 @@ def menuinicio():
     materias(case)
 
 
-menuinicio()
+menustart()
