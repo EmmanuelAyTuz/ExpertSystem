@@ -1,11 +1,11 @@
+import re
 from pyswip import Prolog
 prolog = Prolog()
 
-prolog.consult("src/calculations.pl")
-status = input("Estado{Aprobado=1, NoAprobado=0}: ")
-welcome = prolog.query("count_status(" + status + ", LENGH)")
-print(list(welcome))
-
+# prolog.consult("src/calculations.pl")
+# status = input("Estado{Aprobado=1, NoAprobado=0}: ")
+# welcome = prolog.query("count_status(" + status + ", LENGH)")
+# print(list(welcome))
 
 # prolog.assertz("father(michael,john)")
 # prolog.assertz("father(michael,gina)")

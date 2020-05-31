@@ -12,4 +12,4 @@ student('Rin Tohsaka', 16070036, 5, 1, 1).
 student('Shinji Ikari', 16070037, 2, 1, 0).
 student('Asuka Langley', 16070038, 3, 1, 1).
 student('Misato Katsuragi', 16070040, 3, 1, 1).
-student('Maya Ibuki', 16070041, 1, 1, 1).
+student('Maya Ibuki', 16070041, 1, 2, 1).
