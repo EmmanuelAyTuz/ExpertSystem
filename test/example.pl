@@ -1,0 +1,7 @@
+numb(1).
+numb(2).
+numb(3).
+numb(4).
+numb(5).
+numb(6).
+numb(7).
