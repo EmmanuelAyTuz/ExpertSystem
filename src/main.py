@@ -62,7 +62,7 @@ def default():
 
 def menustart():
     welcome()
-    os.system('cls')
+    os.system('cls') # NOTA para windows tienes que cambiar clear por cls
     print("----------- MENU INICIAL -----------")
     print("1. TOTAL DE MATERIAS")
     print("2. FILTRAR SEMESTRE")
@@ -73,6 +73,7 @@ def menustart():
 
 
 while True:
+    # Mostramos el menu
     menustart()
     case = int(input("Seleccione una opcion: "))
     if(case == 1):
@@ -90,7 +91,6 @@ while True:
     elif(case == 5):
         menustudent()
         input("Has pulsado la opción ...\npulsa una tecla para continuar")
-    
 
 
 def menustudent():
