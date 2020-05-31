@@ -90,7 +90,7 @@ while True:
         input("Has pulsado la opción 4...\npulsa una tecla para continuar")
     elif(case == 5):
         menustudent()
-        input("Has pulsado la opción ...\npulsa una tecla para continuar")
+        input("Has pulsado la opción 5 ...\npulsa una tecla para continuar")
 
 
 def menustudent():
