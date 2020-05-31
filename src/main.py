@@ -126,25 +126,29 @@ def menustudent():
 
 
 while True:
-    # Mostramos el menu
-    menustart()
-    case = int(input("Seleccione una opcion: "))
-    if(case == 1):
-        ALL()
-        input("Has pulsado la opción 1...\npulsa una tecla para continuar")
-    elif(case == 2):
-        SEMESTER()
-        input("Has pulsado la opción 2...\npulsa una tecla para continuar")
-    elif(case == 3):
-        CAREER()
-        input("Has pulsado la opción 3...\npulsa una tecla para continuar")
-    elif(case == 4):
-        CREDITS()
-        input("Has pulsado la opción 4...\npulsa una tecla para continuar")
-    elif(case == 5):
-        menustudent()
-        input("Has pulsado la opción ...\npulsa una tecla para continuar")
-    elif(case == 6):
-        break
-    else:
-        input("No has pulsado ninguna opción correcta...\npulsa una tecla para continuar")
+    try:
+        # Mostramos el menu
+        menustart()
+        case = int(input("Seleccione una opcion: "))
+        if(case == 1):
+            ALL()
+            input("Has pulsado la opción 1...\npulsa una tecla para continuar")
+        elif(case == 2):
+            SEMESTER()
+            input("Has pulsado la opción 2...\npulsa una tecla para continuar")
+        elif(case == 3):
+            CAREER()
+            input("Has pulsado la opción 3...\npulsa una tecla para continuar")
+        elif(case == 4):
+            CREDITS()
+            input("Has pulsado la opción 4...\npulsa una tecla para continuar")
+        elif(case == 5):
+            menustudent()
+            input("Has pulsado la opción ...\npulsa una tecla para continuar")
+        elif(case == 6):
+            break
+        else:
+            input(
+                "No has pulsado ninguna opción correcta...\npulsa una tecla para continuar")
+    except:  # En caso de error:
+        input("ERROR INTENTE DE NUEVO")
