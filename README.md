@@ -3,10 +3,10 @@
 # Usar el comando python src/main.py desde la caperta raiz
 
 # Screenshot Del Proyecto
-![](docs/inicio.PNG)
-- Inicio menu principal
-![](docs/submaterias.PNG)
-- SubMenu Materias
 
+- Inicio menu principal
+![](docs/inicio.PNG)
+- SubMenu Materias
+![](docs/submaterias.PNG)
 
 
