@@ -28,7 +28,6 @@ def ALLSUBJECT():  # Todas las materias
     for sb in prolog.query("subject(A, B, C, D, E)."):
         print("Clave: ", sb["A"], " Nombre: ", sb["B"], " Semestre: ",
               sb["C"], " Carrera: ", sb["D"], " Creditos: ", sb["E"])
-    return 0
 
 
 def SEMESTER():  # Filtro por semestre en las materias
@@ -117,10 +116,6 @@ def actionsubjects(case):#accion para el menu marias
         CREDITS()
     if(case == 5):
         MAXMINSUMCREDITS()
-
-
-def default():
-    return "Opcion Invalida"
 
 
 def menustart():
