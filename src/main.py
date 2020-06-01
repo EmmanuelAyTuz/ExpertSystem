@@ -118,10 +118,6 @@ def actionsubjects(case):
         MAXMINSUMCREDITS()
 
 
-def default():
-    return "Opcion Invalida"
-
-
 def menustart():
     os.system('cls')  # NOTA para windows tienes que cambiar clear por cls
     welcome()
