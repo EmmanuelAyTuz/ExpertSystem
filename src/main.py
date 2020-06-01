@@ -58,7 +58,7 @@ def CREDITS():  # Filtro por creditos en las materias
               sb["C"], " Carrera: ", sb["D"])
 
 
-def MAXMINSUMCREDITS():
+def MAXMINSUMCREDITS(): # Muestra los creditos de cada ingenieria
     prolog.consult("src/rules.pl")
     icareer = input(
         "Indique(1 Sistemas, 2 Admon, 3 Ambiental, 4 Industrial, 5 Civil): ")
@@ -95,7 +95,7 @@ def STUDENTSBYSEMESTER():  # Consulta los alumnos por semestre imprime su matric
         print("\r")
 
 
-def actionstudents(case):
+def actionstudents(case):#accion para el menu alumnos
     if(case == 1):
         STATUS("1")
     if(case == 2):
@@ -106,7 +106,7 @@ def actionstudents(case):
         STUDENTSBYCAREER()
 
 
-def actionsubjects(case):
+def actionsubjects(case):#accion para el menu materias
     if(case == 1):
         ALLSUBJECT()
     if(case == 2):
@@ -133,7 +133,7 @@ def menustart():
     print("-----------------------------------")
 
 
-def menusubject():
+def menusubject():#submenu de materias
     print("----------- MENU MATERIAS -----------")
     print("1. TOTAL DE MATERIAS")
     print("2. FILTRAR SEMESTRE")
@@ -145,7 +145,7 @@ def menusubject():
     actionsubjects(case)
 
 
-def menustudent():
+def menustudent():#submenu de alumnos
     print("----------- MENU ALUMNOS -----------")
     print("1. TOTAL DE APROBADOS")
     print("2. TOTAL DE REPROBADOS")
@@ -158,7 +158,7 @@ def menustudent():
 
 while True:
     try:
-        # Mostramos el menu
+        # Mostramos el menu principal
         menustart()
         case = int(input("Seleccione una opcion: "))
         if(case == 1):
