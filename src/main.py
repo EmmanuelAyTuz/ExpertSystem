@@ -63,7 +63,7 @@ def MAXMINSUMCREDITS(): # Muestra los creditos de cada ingenieria
         "Indique(1 Sistemas, 2 Admon, 3 Ambiental, 4 Industrial, 5 Civil): ")#Esta parte se ingresa el numero de carrera
     mmsc = prolog.query(
         "career_maxminsum_credits(MAX,MIN,SUM," + icareer + ")")#realiza las operaciones
-    print(list(mmsc))
+    print(list(mmsc))#imprime
 
 
 def STATUS(status):  # Filtra por estado de los alumnos
