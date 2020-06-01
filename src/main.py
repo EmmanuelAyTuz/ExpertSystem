@@ -61,9 +61,9 @@ def CREDITS():  # Filtro por creditos en las materias
 def MAXMINSUMCREDITS(): # Muestra los creditos de cada ingenieria
     prolog.consult("src/rules.pl")
     icareer = input(
-        "Indique(1 Sistemas, 2 Admon, 3 Ambiental, 4 Industrial, 5 Civil): ")
+        "Indique(1 Sistemas, 2 Admon, 3 Ambiental, 4 Industrial, 5 Civil): ")#Esta parte se ingresa el numero de carrera
     mmsc = prolog.query(
-        "career_maxminsum_credits(MAX,MIN,SUM," + icareer + ")")
+        "career_maxminsum_credits(MAX,MIN,SUM," + icareer + ")")#realiza las operaciones
     print(list(mmsc))
 
 
@@ -106,7 +106,7 @@ def actionstudents(case):#accion para el menu alumnos
         STUDENTSBYCAREER()
 
 
-def actionsubjects(case):#accion para el menu materias
+def actionsubjects(case):#accion para el menu marias
     if(case == 1):
         ALLSUBJECT()
     if(case == 2):
