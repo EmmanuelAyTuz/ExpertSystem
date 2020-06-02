@@ -1,11 +1,11 @@
 # Emmanuel Ay / Eduardo E. Un
 # Usar el comando python src/main.py desde la caperta raiz
-# Screenshot Del Proyecto
-- Inicio menu principal
+# Screenshot del Proyecto
+- Menu PRINCIPAL
 ![](docs/inicio.PNG)
-- SubMenu MATERIAS
+- Submenu MATERIAS
 ![](docs/submaterias.PNG)
-- SubMenu ALUMNOS
+- Submenu ALUMNOS
 ![](docs/subalumnos.PNG)
 
 
